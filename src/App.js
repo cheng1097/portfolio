@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+
+//import './App.css';
+import "./assets/style.css";
+import Aside from './components/asside/Aside';
+import Navbar from "./components/navbar/Navbar";
+import About from "./components/about/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Mael cheng
-        </p>
-      </header>
-    </div>
+    <main>
+      <Aside />
+      <div className="main-content">
+        <Navbar />
+        <About />
+      </div>
+    </main>
   );
 }
 
