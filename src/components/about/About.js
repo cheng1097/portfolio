@@ -1,11 +1,11 @@
 import { info } from "../../data/info";
 import { clients } from "../../data/clients";
 
-function About() {
+function About({pageActive}) { 
   return (
-    <article className="about  active" data-page="about">
+    <article className={`about ${pageActive == 'about' ? 'active' : ''}`} data-page="about">
       <header>
-        <h2 className="h2 article-title">A propos</h2>
+        <h2 className="h2 article-title">À propos</h2>
       </header>
 
       <section className="about-text justified-text">

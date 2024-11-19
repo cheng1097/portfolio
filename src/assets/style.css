@@ -1884,3 +1884,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 .justified-text {
   text-align: justify;
 }
+
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
+  color: gray; /* Optionnel, pour indiquer visuellement qu'il est désactivé */
+}
+
+.mt-4 {
+  margin-bottom: 30px;
+}

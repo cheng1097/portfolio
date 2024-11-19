@@ -1,12 +1,18 @@
 import profil from "../../assets/profile-pic.png";
 import { info } from "../../data/info.js";
 import Contacts from "./Contact.js";
+import React, { useState } from 'react';
 
 function Aside() {
-  console.log(info);
+ 
+    const [isSidebarActive, setSidebarActive] = useState(false);
+
+    const toggleSidebar = () => {
+      setSidebarActive(!isSidebarActive);
+    };
 
   return (
-    <aside className="sidebar" data-sidebar>
+    <aside className={`sidebar ${isSidebarActive ? 'active' : ''}`} data-sidebar>
       <div className="sidebar-info">
         <figure className="avatar-box">
           <img src={profil} alt={info.name} width="80" />
@@ -20,7 +26,7 @@ function Aside() {
           <p className="title">{info.job}</p>
         </div>
 
-        <button className="info_more-btn" data-sidebar-btn>
+        <button className="info_more-btn" onClick={toggleSidebar} data-sidebar-btn>
           <span>Show Contacts</span>
 
           <ion-icon name="chevron-down"></ion-icon>
@@ -46,6 +52,7 @@ function Aside() {
           )}
         </ul>
       </div>
+
     </aside>
   );
 }
